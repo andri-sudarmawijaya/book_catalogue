@@ -1,0 +1,22 @@
+# Book routing definition
+book.settings_tab:
+  route_name: book.settings
+  title: 'Settings'
+  base_route: book.settings
+
+entity.book.canonical:
+  route_name: entity.book.canonical
+  base_route: entity.book.canonical
+  title: 'View'
+
+entity.book.edit_form:
+  route_name: entity.book.edit_form
+  base_route: entity.book.canonical
+  title: 'Edit'
+
+entity.book.delete_form:
+  route_name:  entity.book.delete_form
+  base_route:  entity.book.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,5 @@
+entity.book.add_form:
+  route_name: entity.book.add_form
+  title: 'Add Book'
+  appears_on:
+    - entity.book.collection

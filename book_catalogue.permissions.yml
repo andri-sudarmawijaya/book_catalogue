@@ -1,0 +1,19 @@
+add book entities:
+  title: 'Create new Book entities'
+
+administer book entities:
+  title: 'Administer Book entities'
+  description: 'Allow to access the administration form to configure Book entities.'
+  restrict access: true
+
+delete book entities:
+  title: 'Delete Book entities'
+
+edit book entities:
+  title: 'Edit Book entities'
+
+view published book entities:
+  title: 'View published Book entities'
+
+view unpublished book entities:
+  title: 'View unpublished Book entities'

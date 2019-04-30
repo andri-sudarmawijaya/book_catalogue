@@ -1,0 +1,14 @@
+
+# Book menu items definition
+entity.book.collection:
+  title: 'Book list'
+  route_name: entity.book.collection
+  description: 'List Book entities'
+  parent: system.admin_structure
+  weight: 100
+
+book.admin.structure.settings:
+  title: 'Book settings'
+  description: 'Configure Book entities'
+  route_name: book.settings
+  parent: system.admin_structure

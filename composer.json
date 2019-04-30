@@ -1,0 +1,14 @@
+{
+  "name": "drupal/book_catalogue",
+  "type": "drupal-module",
+  "description": "Book Catalogure core module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/book_catalogue",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/book_catalogue",
+    "source": "http://cgit.drupalcode.org/book_catalogue"
+  },
+  "require": { }
+}
