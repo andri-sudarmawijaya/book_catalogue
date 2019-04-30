@@ -33,7 +33,7 @@ use Drupal\user\UserInterface;
  *       "html" = "Drupal\book_catalogue\BookHtmlRouteProvider",
  *     },
  *   },
- *   base_table = "book",
+ *   base_table = "book_catalogue",
  *   admin_permission = "administer book entities",
  *   entity_keys = {
  *     "id" = "id",
@@ -44,7 +44,7 @@ use Drupal\user\UserInterface;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/content/book/{book}",
+ *     "canonical" = "/book/{book}",
  *     "add-form" = "/admin/content/book/add",
  *     "edit-form" = "/admin/content/book/{book}/edit",
  *     "delete-form" = "/admin/content/book/{book}/delete",
@@ -182,7 +182,7 @@ class Book extends ContentEntityBase implements BookInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string',
         'weight' => -4,
       ])
