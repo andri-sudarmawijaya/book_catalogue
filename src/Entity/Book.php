@@ -214,29 +214,23 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-	  
-	  $fields['year'] = BaseFieldDefinition::create('datetime')
+
+	  $fields['year'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Year'))
-      ->setDescription(t('The publisher year of the Book entity.'))
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'datetime_type' => 'date',
-      ])
-      ->setDefaultValue('')
-      ->setDisplayOptions('view', [
+      ->setDescription(t('The published year of the Book entity.'))
+      ->setDisplayOptions('view', array(
         'label' => 'above',
-        'type' => 'datetime_default',
-        'settings' => [
-          'format_type' => 'medium',
-        ],
-        'weight' => -9,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
-        'weight' => -9,
-      ])
+        'type' => 'integer',
+        'weight' => -3,
+        ))
+      ->setDisplayOptions('form', array(
+        'type' => 'number',
+        'weight' => -3,
+        ))
+      //->setSetting('size', 'big');
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['series'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Series'))
@@ -256,7 +250,8 @@ class Book extends ContentEntityBase implements BookInterface {
         'weight' => -4,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
 
     $fields['publisher'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Published by'))
