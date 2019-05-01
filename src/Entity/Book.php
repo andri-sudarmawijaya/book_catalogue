@@ -177,7 +177,7 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Book entity.'))
       ->setSettings([
-        'max_length' => 50,
+        'max_length' => 255,
         'text_processing' => 0,
       ])
       ->setDefaultValue('')
@@ -193,6 +193,50 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['isbn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('ISBN'))
+      ->setDescription(t('The isbn of the Book entity.'))
+      ->setSettings([
+        'max_length' => 255,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
+	  
+	  $fields['year'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Year'))
+      ->setDescription(t('The publisher year of the Book entity.'))
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'datetime_type' => 'date',
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'datetime_default',
+        'settings' => [
+          'format_type' => 'medium',
+        ],
+        'weight' => -9,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => -9,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
