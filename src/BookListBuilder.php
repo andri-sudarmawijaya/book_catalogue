@@ -31,7 +31,7 @@ class BookListBuilder extends EntityListBuilder {
     $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),
-      'entity.book.edit_form',
+      'entity.book.canonical',
       ['book' => $entity->id()]
     );
     return $row + parent::buildRow($entity);
