@@ -304,6 +304,24 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+      $fields['cover'] = BaseFieldDefinition::create('image')
+      ->setSetting('file_extensions', 'png jpg jpeg')
+      ->setSetting ('uri_scheme','public://book-cover')
+      ->setLabel(t('Cover'))
+      ->setDescription(t('The cover of the Book entity.'))
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', array(
+        'label' => 'above',
+        'type' => 'file',
+        'weight' => -4,
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'file',
+        'weight' => -4,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 	  
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
