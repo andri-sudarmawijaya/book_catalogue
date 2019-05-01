@@ -260,7 +260,7 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setRequired(TRUE);
 
     $fields['publisher'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Authored by'))
+      ->setLabel(t('Published by'))
       ->setDescription(t('The entity ID of publisher of the Book entity.'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'publisher')
@@ -269,11 +269,11 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'entity_reference_label',
-        'weight' => 0,
+        'weight' => 1,
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
+        'weight' => 1,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
@@ -294,11 +294,11 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'entity_reference_label',
-        'weight' => 0,
+        'weight' => 2,
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
+        'weight' => 2,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
@@ -315,7 +315,7 @@ class Book extends ContentEntityBase implements BookInterface {
       ->setDefaultValue(TRUE)
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
-        'weight' => -3,
+        'weight' => 10,
       ]);
 
     $fields['created'] = BaseFieldDefinition::create('created')
