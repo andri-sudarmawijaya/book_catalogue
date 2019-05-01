@@ -256,8 +256,7 @@ class Book extends ContentEntityBase implements BookInterface {
         'weight' => -4,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['publisher'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Published by'))
@@ -282,7 +281,8 @@ class Book extends ContentEntityBase implements BookInterface {
         ],
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['author'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
@@ -307,7 +307,8 @@ class Book extends ContentEntityBase implements BookInterface {
         ],
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 	  
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
